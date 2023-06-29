@@ -1,4 +1,7 @@
 # Building an Open AI plugin with Codespaces
+
+**This is the live demo version from [VS Code Livestream](https://www.youtube.com/watch?v%253DfPCjEbRpK1M%2526ab_channel%253DVisualStudioCode). All code changes made during the Livestream session has been committed to this (`starter`) branch.**
+
 This is a sample repo for developing OpenAI plugin using the FastAPI framework. There are three main parts of the repo, with details of each below:
 - [📦 Code to help setup development environment for FastAPI framework](#📦-code-to-help-setup-development-environment)
 - [💻 Code for the FastAPI app](#💻-code-for-the-fastapi-app)
