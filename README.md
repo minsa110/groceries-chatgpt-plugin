@@ -29,8 +29,6 @@ If you have [access](https://code.visualstudio.com/blogs/2023/03/30/vscode-copil
    Assume that a docker container is running for Redis, running and accessible at local host and port 6379. Make use of the Redis container for persisting data from the Grocery List app.
 
    Include a main section which will run this app using uvicorn. The Python module where I save this code will be called main.py.
-
-   Mount static files in the .well-known directory to the path /.well-known, which should at minimum contain ai-plugin.json and openapi.yaml.
    ```
 - `openapi.yaml` is a specification that dictates how to define the schema of the API.
 
