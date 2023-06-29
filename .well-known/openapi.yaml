@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Grocery List API
+  version: 1.0.0
+servers:
+  - url: https://minsa110-opulent-rotary-phone-7v9r45v6xgq2rg7r-8000.preview.app.github.dev
+paths:
+  /items/:
+    post:
+      summary: Create a new item
+      operationId: createItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item_id:
+                    type: integer
+                  name:
+                    type: string
+    get:
+      summary: Get all items
+      operationId: getItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+  /items/{item_id}:
+    get:
+      summary: Get an item by ID
+      operationId: getItemById
+      parameters:
+        - name: item_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    delete:
+      summary: Delete an item by ID
+      operationId: deleteItemById
+      parameters:
+        - name: item_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        name:
+          type: string
