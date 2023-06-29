@@ -1,4 +1,7 @@
 # Building an Open AI plugin with Codespaces
+
+**The live demo version from [VS Code Livestream](https://www.youtube.com/watch?v%253DfPCjEbRpK1M%2526ab_channel%253DVisualStudioCode) can be found in the [`starter` branch](https://github.com/minsa110/groceries-chatgpt-plugin/tree/starter).**
+
 This is a sample repo for developing OpenAI plugin using the FastAPI framework. There are three main parts of the repo, with details of each below:
 - [📦 Code to help setup development environment for FastAPI framework](#📦-code-to-help-setup-development-environment)
 - [💻 Code for the FastAPI app](#💻-code-for-the-fastapi-app)
@@ -26,8 +29,6 @@ If you have [access](https://code.visualstudio.com/blogs/2023/03/30/vscode-copil
    Assume that a docker container is running for Redis, running and accessible at local host and port 6379. Make use of the Redis container for persisting data from the Grocery List app.
 
    Include a main section which will run this app using uvicorn. The Python module where I save this code will be called main.py.
-
-   Mount static files in the .well-known directory to the path /.well-known, which should at minimum contain ai-plugin.json and openapi.yaml.
    ```
 - `openapi.yaml` is a specification that dictates how to define the schema of the API.
 
