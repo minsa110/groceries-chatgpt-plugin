@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Grocery list app",
+  "name_for_model": "grocery_list_app",
+  "description_for_human": "Grocery list app for managing your list of items to purchase",
+  "description_for_model": "Grocery list app for managing your list of items to purchase",
+  "auth": {
+      "type": "user_http",
+      "authorization_type": "bearer"
+  },
+  "api": {
+      "type": "openapi",
+      "url": "https://minsa110-sturdy-space-acorn-5gq4prgj9q9c7q45-8000.preview.app.github.dev/.well-known/openapi.yaml",
+      "is_user_authenticated": "false"
+  },
+  "logo_url": "https://minsa110-sturdy-space-acorn-5gq4prgj9q9c7q45-8000.preview.app.github.dev/.well-known/logo.png",
+  "contact_email": "soojin@example.com",
+  "legal_info_url": "https://example.com/legal"
+}
