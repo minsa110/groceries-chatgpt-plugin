@@ -6,6 +6,7 @@ from main import app
 
 @pytest.fixture
 def client():
+    items.clear()  # Clear the in-memory storage before each test
     return TestClient(app)
 
 
@@ -22,19 +23,20 @@ def test_list_item_not_found(client):
 
 
 def test_add_item(client):
-    response = client.post("/items", params={"item": "Eggs"})
+    response = client.post("/items", json={"item": "Eggs"})
     assert response.status_code == 200
     assert response.json() == {"item_id": 1, "item": "Eggs"}
 
 
 def test_list_item(client):
-    client.post("/items", params={"item": "Eggs"})
+    client.post("/items", json={"item": "Eggs"})
     response = client.get("/items/1")
     assert response.status_code == 200
     assert response.json() == {"item_id": 1, "item": "Eggs"}
 
 
 def test_delete_item(client):
+    client.post("/items", json={"item": "Eggs"})
     response = client.delete("/items/1")
     assert response.status_code == 200
     assert response.json() == {"result": "Item deleted"}
